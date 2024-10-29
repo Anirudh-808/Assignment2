@@ -29,6 +29,7 @@ func CodeHandler(c *gin.Context) {
 
 	if err != nil {
 		c.JSON(400, gin.H{"error": "Invalid request format"})
+		return
 	}
 
 	c.JSON(200, gin.H{
