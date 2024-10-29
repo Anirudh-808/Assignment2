@@ -5,9 +5,9 @@ import (
 )
 
 type CodeFormat struct {
-	language string `json:"language" binding:"required"`
-	code     string `json:"code" binding:"required"`
-	input    string `json:"input" binding:"required"`
+	Language string `json:"language" binding:"required"`
+	Code     string `json:"code" binding:"required"`
+	Input    string `json:"input" binding:"required"`
 }
 
 func CodeHandler(c *gin.Context) {
@@ -21,9 +21,9 @@ func CodeHandler(c *gin.Context) {
 	}
 
 	c.JSON(200, gin.H{
-		"py":    userInput.language,
-		"code":  userInput.code,
-		"input": userInput.input,
+		"py":    userInput.Language,
+		"code":  userInput.Code,
+		"input": userInput.Input,
 	})
 
 }
