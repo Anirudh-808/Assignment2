@@ -21,9 +21,9 @@ func CodeHandler(c *gin.Context) {
 	}
 
 	c.JSON(200, gin.H{
-		"language": "py",
-		"code":     "print('hello world')",
-		"input":    "random stuff",
+		"py":    userInput.Language,
+		"code":  userInput.Code,
+		"input": userInput.Input,
 	})
 
 }
