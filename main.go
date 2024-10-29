@@ -26,7 +26,7 @@ func CodeHandler(c *gin.Context) {
 	err := c.ShouldBindJSON(&userInput)
 
 	if err != nil {
-		c.JSON(400, gin.H{"error": "Invalid request format"})
+		c.JSON(400, gin.H{"error": err.Error()})
 		return
 	}
 
