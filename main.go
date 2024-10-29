@@ -23,8 +23,6 @@ type CodeFormat struct {
 func CodeHandler(c *gin.Context) {
 	var userInput CodeFormat
 
-	c.BindJSON(&userInput)
-
 	err := c.ShouldBindJSON(&userInput)
 
 	if err != nil {
