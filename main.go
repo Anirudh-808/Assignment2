@@ -4,20 +4,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func main() {
-	//start the route
-	r := gin.Default()
-
-	//send the request
-	r.POST("/run", CodeHandler)
-
-	r.Run()
-}
-
 type CodeFormat struct {
-	language string
-	code     string
-	input    string
+	language string `json:"language" binding:"required"`
+	code     string `json:"code" binding:"required"`
+	input    string `json:"input" binding:"required"`
 }
 
 func CodeHandler(c *gin.Context) {
@@ -36,4 +26,14 @@ func CodeHandler(c *gin.Context) {
 		"input": userInput.input,
 	})
 
+}
+
+func main() {
+	//start the route
+	r := gin.Default()
+
+	//send the request
+	r.POST("/run", CodeHandler)
+
+	r.Run()
 }
