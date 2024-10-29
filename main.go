@@ -33,7 +33,7 @@ func main() {
 	r := gin.Default()
 
 	//send the request
-	r.POST("/run", CodeHandler)
+	r.POST("/code/run", CodeHandler)
 
 	r.Run()
 }
